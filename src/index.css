@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.rasm{
+  background-image: url("Group 10.svg");
+  background-position:center ;
+}
+
+:root{
+  --color-text-oq:#fff;
+  --color-orqa-fon:#121721;
+  --color-orqasi:#19202D;
+  --color-malumot:#9DAEC2;
+}
+
+.rang{
+  --color-text-oq:#19202D;
+  --color-orqa-fon:#F4F6F8;
+  --color-orqasi:#fff;
+  --color-malumot:#6E8098;
+}
+.Link{
+  color: var(--color-text-oq) ;
+}
+.bgbola{
+  background:var(--color-orqasi);
+}
+.bgota{
+  background: var(--color-orqa-fon);
+}
+.tex{
+  color: var(--color-malumot);
+}
