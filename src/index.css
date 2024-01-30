@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 .rasm{
-  background-image: url("Group 10.svg");
+  background-image: url("../public/Group\ 10.svg");
   background-position:center ;
 }
 
