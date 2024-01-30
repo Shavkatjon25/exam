@@ -69,7 +69,7 @@ return sonlar.map(a=>{
 
 
 return(
-  <div >
+  <div className='order-10 absolute bgota' >
 
 
 

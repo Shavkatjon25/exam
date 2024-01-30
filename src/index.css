@@ -1,10 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.rasm{
+/* .rasm{
   background-image: url("../public/Group\ 10.svg");
   background-position:center ;
-}
+} */
 
 :root{
   --color-text-oq:#fff;

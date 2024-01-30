@@ -32,7 +32,7 @@ useEffect(()=>{
 
 if (pags) {
   return (
-    <div>
+    <div className='absolute w-full flex flex-col bgota'>
 
 
       <div className="w-[730px] h-[140px] flex bgbola ml-auto mr-auto mt-[-40px] ">
