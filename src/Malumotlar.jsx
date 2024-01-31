@@ -38,7 +38,7 @@ if (pags) {
       <div className="lg:w-[730px] w-[327px] h-[205px] pb-2 lg:pb-0 items-center lg:h-[140px] flex  lg:flex-row bgbola ml-auto mr-auto mt-[-40px] flex-col">
 
 
-        <Bg className="lg:w-[140px] w-[50px] h-[50px] lg:h-[140px] flex lg:py-9 justify-center items-center rounded-md lg:rounded-none lg:px-4 lg:mt-[-25px]" bg={pags.logoBackground}>
+        <Bg className="lg:w-[140px] w-[50px] h-[50px] lg:h-[140px] flex lg:py-9 justify-center items-center rounded-md lg:rounded-none lg:px-4 lg:mt-0 mt-[-25px]" bg={pags.logoBackground}>
          <img src={`https://frontend-mentor-apis-6efy.onrender.com${pags.logo}`} alt="xx" />
         </Bg>
 
