@@ -116,7 +116,7 @@ return(
   <div className='order-10 absolute bgota flex w-full flex-col' >
 
 
-<div className={`${flt ? 'block':'hidden'} w-[100vw] h-[100vh] fixed  z-40 oldoyna mt-[-160px]`} onClick={()=>setflt(false)}>
+<div className={`${flt ? 'block':'hidden'} w-[100vw] lg:hidden h-[100vh] fixed  z-40 oldoyna mt-[-160px]`} onClick={()=>setflt(false)}>
 
   <div className='w-[327px] h-[217px] bgbola flex flex-col rounded-[5px] ml-auto mr-auto mt-[30vh]' onClick={(a)=>a.stopPropagation()}>
 
