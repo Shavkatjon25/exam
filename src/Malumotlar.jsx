@@ -35,21 +35,21 @@ if (pags) {
     <div className='absolute w-full flex flex-col bgota'>
 
 
-      <div className="w-[730px] h-[140px] flex bgbola ml-auto mr-auto mt-[-40px] ">
+      <div className="lg:w-[730px] w-[327px] h-[205px] pb-2 lg:pb-0 items-center lg:h-[140px] flex  lg:flex-row bgbola ml-auto mr-auto mt-[-40px] flex-col">
 
 
-        <Bg className="w-[140px] h-[140px] flex py-9 justify-center px-4" bg={pags.logoBackground}>
+        <Bg className="lg:w-[140px] w-[50px] h-[50px] lg:h-[140px] flex lg:py-9 justify-center items-center rounded-md lg:rounded-none lg:px-4 mt-[-25px]" bg={pags.logoBackground}>
          <img src={`https://frontend-mentor-apis-6efy.onrender.com${pags.logo}`} alt="xx" />
         </Bg>
 
 
-        <div className="px-[43px] flex justify-between items-center w-full">
+        <div className="px-[43px] flex justify-between items-center w-full lg:flex-row flex-col">
           <div>
-            <h2 className="text-[#fff] text-[24px] font-bold Link">{pags.company}</h2>
+            <h2 className="text-[#fff] text-[20px] lg:text-[24px] font-bold mt-3 lg:mt-0 Link">{pags.company}</h2>
             <p className="text-[#6E8098] text-[16px] font-normal ">{pags.company}.com</p>
           </div>
           <div>
-            <a href={pags.website} className="w-[147px] flex justify-center items-center h-12 bg-slate-600 hover:bg-slate-500 text-[16px] font-bold text-white">
+            <a href={pags.website} className="w-[147px] mt-8 lg:mt-0 flex justify-center items-center h-12 bg-slate-600 hover:bg-slate-500 text-[16px] font-bold text-white">
             Company Site
             </a>
           </div>
@@ -61,20 +61,20 @@ if (pags) {
 
 
 
-      <div className="w-[730px] bgbola pb-12 pl-12 pr-[43px] pt-12 mt-8 ml-auto mr-auto rounded-[5px]">
+      <div className="lg:w-[730px] bgbola pb-12 lg:pl-12 px-4 lg:pr-[43px] pt-12 mt-8 ml-auto mr-auto rounded-[5px]">
 
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center flex-col lg:flex-row">
             <div>
                 <div className="flex gap-3 text-[#6E8098] text-[16px] font-normal"> 
                     <p>{pags.postedAt}</p>
                     <p>.</p>
                     <p>{pags.contract}</p>
                 </div>
-                <h2 className="Link text-[28px] font-bold">{pags.position}</h2>
+                <h2 className="Link text-[20px] lg:text-[28px] font-bold">{pags.position}</h2>
                 <p className="text-[#5964E0] font-bold text-[14px]">{pags.location}</p>
             </div>
             <div>
-              <a href={pags.apply} className="w-[141px] hover:bg-[#5964e0cc] flex justify-center items-center h-12 bg-[#5964E0] text-white rounded-[5px]">Apply Now</a>
+              <a href={pags.apply} className=" lg:w-[141px] mt-[50px] lg:mt-0 w-[300px] hover:bg-[#5964e0cc] flex justify-center items-center h-12 bg-[#5964E0] text-white rounded-[5px]">Apply Now</a>
             </div>
         </div>
 
@@ -116,19 +116,19 @@ if (pags) {
           </ul>
         </div>
 
-        <Link to={'/'} className="Link bg-blue-500 rounded-md hover:bg-[#5964e0cc] hover:bg-blue-400 py-1 px-2 mt-5 block w-16 ml-[30vw]">Back</Link>
+        <Link to={'/'} className="Link bg-blue-500 rounded-md hover:bg-[#5964e0cc] hover:bg-blue-400 py-1 px-2 mt-5 block w-16 lg:ml-[30vw] ml-[55vw]">Back</Link>
       </div>
 
       <div className="w-full h-24 flex justify-around mt-[53px] bgbola items-center">
 
-        <div>
-          <h2 className="Link text-[28px] font-bold">{pags.position}</h2>
+        <div className="lg:block hidden">
+          <h2 className="Link text-[28px]  font-bold">{pags.position}</h2>
           <p className="text-[#9DAEC2] text-[16px] font-normal">So Digital Inc.</p>
         </div>
 
 
         <div>
-          <a href={pags.website} className="bg-[#5964E0] hover:bg-[#5964e0cc] w-[141px] h-12 text-white flex justify-center items-center text-[16px] font-bold rounded-[5px]">Apply Now</a>
+          <a href={pags.website} className="bg-[#5964E0] hover:bg-[#5964e0cc] w-[300px] lg:w-[141px] h-12 text-white flex justify-center items-center text-[16px] font-bold rounded-[5px]">Apply Now</a>
         </div>
 
       </div>
