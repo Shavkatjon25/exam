@@ -1,16 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* .rasm{
+.rasm{
   background-image: url("../public/Group\ 10.svg");
   background-position:center ;
-} */
+}
 
 :root{
   --color-text-oq:#fff;
   --color-orqa-fon:#121721;
   --color-orqasi:#19202D;
   --color-malumot:#9DAEC2;
+ 
+  --color-fil:#fff;
 }
 
 .rang{
@@ -18,7 +20,12 @@
   --color-orqa-fon:#F4F6F8;
   --color-orqasi:#fff;
   --color-malumot:#6E8098;
+  --color-fil:#6E8098;
 }
+.svg{
+  fill:var(--color-fil);
+}
+
 .Link{
   color: var(--color-text-oq) ;
 }
@@ -30,4 +37,9 @@
 }
 .tex{
   color: var(--color-malumot);
+}
+
+
+.oldoyna{
+  background: rgba(0, 0, 0, 0.5);
 }
