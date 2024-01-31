@@ -49,7 +49,7 @@ if (pags) {
             <p className="text-[#6E8098] text-[16px] font-normal ">{pags.company}.com</p>
           </div>
           <div>
-            <a href={pags.website} className="w-[147px] flex justify-center items-center h-12 bg-slate-600 text-[16px] font-bold text-white">
+            <a href={pags.website} className="w-[147px] flex justify-center items-center h-12 bg-slate-600 hover:bg-slate-500 text-[16px] font-bold text-white">
             Company Site
             </a>
           </div>
@@ -74,7 +74,7 @@ if (pags) {
                 <p className="text-[#5964E0] font-bold text-[14px]">{pags.location}</p>
             </div>
             <div>
-              <a href={pags.apply} className="w-[141px] flex justify-center items-center h-12 bg-[#5964E0] text-white rounded-[5px]">Apply Now</a>
+              <a href={pags.apply} className="w-[141px] hover:bg-[#5964e0cc] flex justify-center items-center h-12 bg-[#5964E0] text-white rounded-[5px]">Apply Now</a>
             </div>
         </div>
 
@@ -116,7 +116,7 @@ if (pags) {
           </ul>
         </div>
 
-        <Link to={'/'} className="Link bg-blue-500 rounded-md hover:bg-blue-400 py-1 px-2 mt-5 block w-16 ml-[30vw]">Back</Link>
+        <Link to={'/'} className="Link bg-blue-500 rounded-md hover:bg-[#5964e0cc] hover:bg-blue-400 py-1 px-2 mt-5 block w-16 ml-[30vw]">Back</Link>
       </div>
 
       <div className="w-full h-24 flex justify-around mt-[53px] bgbola items-center">
@@ -128,7 +128,7 @@ if (pags) {
 
 
         <div>
-          <a href={pags.website} className="bg-[#5964E0] w-[141px] h-12 text-white flex justify-center items-center text-[16px] font-bold rounded-[5px]">Apply Now</a>
+          <a href={pags.website} className="bg-[#5964E0] hover:bg-[#5964e0cc] w-[141px] h-12 text-white flex justify-center items-center text-[16px] font-bold rounded-[5px]">Apply Now</a>
         </div>
 
       </div>
@@ -137,7 +137,7 @@ if (pags) {
   )
 }else return (
   <div>
-    <div class="flex gap-4 w-[689px] h-[140px] ml-auto mr-auto mt-[-40px] bgola">
+    <div class="flex gap-4 w-[689px] h-[140px] ml-auto mr-auto mt-[-40px] bgbola">
       <div class="skeleton h-[140px] w-[140px] rounded-none"></div>
       <div className="flex flex-col gap-4 h-[140px] justify-center">
         <div class="skeleton h-[20px] w-48 rounded-none"></div>
@@ -147,7 +147,7 @@ if (pags) {
       <div class="skeleton h-10 ml-32 mt-12 w-28 rounded-[5px] mb-8"></div>
       </div>
     </div>
-    <div className="w-[730px] bgola pb-12 pl-12 pr-[43px] pt-12 mt-8 ml-auto mr-auto rounded-[5px]">
+    <div className="w-[730px] bgbola pb-12 pl-12 pr-[43px] pt-12 mt-8 ml-auto mr-auto rounded-[5px]">
 
     <div className="flex justify-between">
     <div className="flex flex-col gap-4 h-[140px] justify-center">

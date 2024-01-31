@@ -10,21 +10,47 @@ function App() {
   const [filtr, setfiltr] = useState('');
   const [manzl, setManzl] = useState('')
   const [full, setfull] = useState(false)
-
+ const [err, setErr]=useState(false);
 
 
   const [count, setCount] = useState([])
   const Data=async ()=>{
-    const malumot= await fetch('https://frontend-mentor-apis-6efy.onrender.com/devjobs?search=&location=&fulltime&limit&skip=');
+    const malumot= await fetch('https://frontend-mentor-apis-6efy.onrender.com/devjobs?search='+filtr+'&location='+manzl+'&fulltime='+full);
     const malumotJs=await malumot.json();
     setCount(malumotJs.data);
     console.log(malumotJs.data);
+    if (malumotJs.data.length==0) {
+      setErr(true)
+    }else {setErr(false)};
   }
 
 useEffect(()=>{
   Data();
   console.log("m");
 }, []);
+
+
+
+function Fil(x){
+  setfiltr(x);
+}
+
+
+
+function Man(x){
+  setManzl(x)
+}
+
+
+
+function Search(){
+  Data();
+  setfiltr('');
+  setManzl('');
+}
+
+
+
 
 
 function Body(mal){
@@ -49,7 +75,13 @@ function Body(mal){
 }
 
  const sonlar=[1, 2, 3, 4, 5, 6]
+
+
 function Skleton(){
+  
+  if (err) {
+    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="96" height="96" fill="rgba(236,28,28,1)"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 10.5858L9.17157 7.75736L7.75736 9.17157L10.5858 12L7.75736 14.8284L9.17157 16.2426L12 13.4142L14.8284 16.2426L16.2426 14.8284L13.4142 12L16.2426 9.17157L14.8284 7.75736L12 10.5858Z"></path></svg>
+  } else{
 return sonlar.map(a=>{
   return(
     <div class="flex flex-col gap-4 w-[350px] h-[228px] rounded-md bgbola p-5 px-8">
@@ -66,10 +98,11 @@ return sonlar.map(a=>{
   )
 })
 }
+}
 
 
 return(
-  <div className='order-10 absolute bgota' >
+  <div className='order-10 absolute bgota flex w-full flex-col' >
 
 
 
@@ -84,7 +117,7 @@ return(
       <svg className='cursor-pointer' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M16.024 15.0588H17.1123L23.9435 21.9037L21.9037 23.9435L15.0588 17.1123V16.0308L14.6824 15.6544C13.1286 16.9891 11.1093 17.7968 8.89842 17.7968C3.98374 17.7968 0 13.8131 0 8.89842C0 3.98374 3.98381 0 8.89842 0C13.813 0 17.7968 3.98374 17.7968 8.89842C17.7968 11.1093 16.9891 13.1286 15.6475 14.6824L16.024 15.0588ZM2.73799 8.89842C2.73799 12.3003 5.49651 15.0588 8.89842 15.0588C12.3003 15.0588 15.0588 12.3003 15.0588 8.89842C15.0588 5.49651 12.3003 2.73799 8.89842 2.73799C5.49651 2.73799 2.73799 5.49651 2.73799 8.89842Z" fill="#5964E0"/>
       </svg>
-        <input type="text" className='w-[271px] h-8 text-center bgbola cursor-pointer Link' placeholder='Filter by title, companies, expertise…' />
+        <input type="text" value={filtr} onChange={(a)=>Fil(a.target.value)} className='w-[271px] outline-none h-8 text-center bgbola cursor-pointer Link' placeholder='Filter by title, companies, expertise…' />
       </div>
 
 
@@ -92,28 +125,28 @@ return(
       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="24" viewBox="0 0 17 24" fill="none">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M8.44766 0C10.6803 0 12.7796 0.870546 14.3584 2.45105C17.2802 5.37556 17.6433 10.8781 15.1348 14.2255L8.44766 23.894L1.75053 14.2119C-0.748035 10.8781 -0.384933 5.37556 2.53689 2.45105C4.11571 0.870546 6.21455 0 8.44766 0ZM5.47353 8.29091C5.47353 9.97484 6.84268 11.3455 8.52481 11.3455C10.2069 11.3455 11.5761 9.97484 11.5761 8.29091C11.5761 6.60698 10.2069 5.23636 8.52481 5.23636C6.84268 5.23636 5.47353 6.60698 5.47353 8.29091Z" fill="#5964E0"/>
       </svg>
-        <input type="text" className='w-[165px] h-8 text-center bgbola cursor-pointer Link' placeholder='Filter by location…' />
+        <input type="text" value={manzl} onChange={(a)=>Man(a.target.value)} className='w-[165px] outline-none h-8 text-center bgbola cursor-pointer Link' placeholder='Filter by location…' />
       </div>
 
 
       <div className='w-[299px] Limk h-20 flex justify-center items-center gap-4 pl-4'>
-        <input type='checkbox' className='w-5 h-5 bg-[#19202D] cursor-pointer'/>
+        <input type='checkbox' className='w-5 h-5 bg-[#19202D] cursor-pointer' onClick={()=>setfull(!full)}/>
         <h2 className='text-[16px] font-bold Link'>Full Time Only</h2>
-        <button className='btn bg-[#5964E0] text-white rounded-[5px] border-none hover:bg-[#5964e0cc] ml-10'>Search</button>
+        <button className='btn bg-[#5964E0] text-white rounded-[5px] border-none hover:bg-[#5964e0cc] ml-10' onClick={Search}>Search</button>
       </div>
 
 
     </div>
 
 
-    <div className='mt-[105px] flex flex-wrap justify-center gap-[30px] gap-y-[65px] px-[165px]'>
+    <div className='mt-[105px] flex flex-wrap justify-center gap-[30px] gap-y-[65px] px-[165px] '>
       {count.length!=0 ? Body(count):Skleton()}
     </div>
 
 
 
     <div className='w-full flex items-center justify-center mt-14  pb-[104px]'>
-      <button className='bg-[#5964E0] cursor-pointer hover:bg-[#939BF4] rounded-[5px] w-[141px] h-12 text-white'>Load More</button>
+      <button className={`bg-[#5964E0] cursor-pointer hover:bg-[#939BF4] rounded-[5px] w-[141px] h-12 text-white ${err ? 'hidden':''}`}>Load More</button>
     </div>
   </div>
 )
